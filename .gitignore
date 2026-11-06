@@ -1,0 +1,21 @@
+# Entornos virtuales
+.venv/
+venv/
+env/
+
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+.pytest_cache/
+.coverage
+htmlcov/
+
+# Django
+db.sqlite3
+*.log
+
+# Editores y sistema
+.vscode/
+.idea/
+.DS_Store

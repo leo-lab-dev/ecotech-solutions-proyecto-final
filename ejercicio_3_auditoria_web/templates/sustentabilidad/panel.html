@@ -1,0 +1,76 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Panel de sustentabilidad con las emisiones de carbono por planta industrial.">
+    <title>Panel de Sustentabilidad | EcoTech Solutions</title>
+    <link rel="stylesheet" href="{% static 'sustentabilidad/panel.css' %}">
+</head>
+<body>
+    <header>
+        <h1>Panel de Sustentabilidad</h1>
+        <p class="subtitulo">Auditoría de emisiones de carbono por planta industrial</p>
+    </header>
+
+    <main>
+        <div class="tarjetas">
+            <article class="tarjeta">
+                <h2>Total global de emisiones</h2>
+                <p class="valor">
+                    {{ metricas.total_emisiones|floatformat:2 }}
+                    <span class="unidad">kg CO₂</span>
+                </p>
+            </article>
+
+            <article class="tarjeta">
+                <h2>Planta con mayor consumo</h2>
+                {% if metricas.planta_mayor_consumo %}
+                    <p class="valor">{{ metricas.planta_mayor_consumo }}</p>
+                {% else %}
+                    <p class="valor">Sin registros</p>
+                {% endif %}
+            </article>
+
+            <article class="tarjeta">
+                <h2>Consumo de la planta líder</h2>
+                <p class="valor">
+                    {{ metricas.consumo_mayor_planta|floatformat:2 }}
+                    <span class="unidad">kWh</span>
+                </p>
+            </article>
+        </div>
+
+        <section aria-labelledby="titulo-emisiones">
+            <h2 id="titulo-emisiones">Emisiones por planta</h2>
+
+            {% if metricas.emisiones_por_planta %}
+                <div class="tabla-contenedor">
+                    <table>
+                        <caption>Emisiones acumuladas por planta industrial</caption>
+                        <thead>
+                            <tr>
+                                <th scope="col">Planta</th>
+                                <th scope="col" class="numerico">Emisiones (kg CO₂)</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            {% for planta, emisiones in metricas.emisiones_por_planta.items %}
+                                <tr>
+                                    <td>{{ planta }}</td>
+                                    <td class="numerico">{{ emisiones|floatformat:2 }}</td>
+                                </tr>
+                            {% endfor %}
+                        </tbody>
+                    </table>
+                </div>
+            {% else %}
+                <p class="sin-datos">
+                    No hay registros de consumo disponibles para calcular emisiones.
+                </p>
+            {% endif %}
+        </section>
+    </main>
+</body>
+</html>

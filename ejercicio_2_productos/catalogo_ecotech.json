@@ -1,0 +1,26 @@
+[
+  {
+    "tipo": "DispositivoEcologico",
+    "identificador": "ECO-001",
+    "nombre": "Cargador solar portátil",
+    "precio": 39.9,
+    "stock": 25
+  },
+  {
+    "tipo": "DispositivoEcologico",
+    "identificador": "ECO-002",
+    "nombre": "Batería de respaldo",
+    "precio": 129.0,
+    "stock": 12
+  },
+  {
+    "tipo": "PanelSolar",
+    "identificador": "ECO-003",
+    "nombre": "Panel solar residencial 450W",
+    "precio": 349.99,
+    "stock": 8,
+    "potencia_watts": 450.0,
+    "eficiencia": 21.5,
+    "tecnologia": "Monocristalino"
+  }
+]
