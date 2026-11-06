@@ -1,0 +1,161 @@
+/* ============================================================
+   Panel de Sustentabilidad — EcoTech Solutions
+   Hoja de estilos de sustentabilidad/panel.html
+   ============================================================ */
+
+:root {
+    color-scheme: light;
+    --color-primario: #1f6f43;
+    --color-primario-suave: #e6f4ec;
+    --color-texto: #1c2b24;
+    --color-texto-suave: #4b5f55;
+    --color-borde: #cfe3d7;
+    --color-fondo: #f7faf8;
+    --color-superficie: #ffffff;
+    --radio: 0.75rem;
+    --sombra: 0 2px 6px rgba(31, 111, 67, 0.06);
+    --espaciado: 1.25rem;
+    --ancho-maximo: 960px;
+}
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    padding: 2rem 1rem;
+    font-family: system-ui, -apple-system, "Segoe UI", sans-serif;
+    line-height: 1.5;
+    color: var(--color-texto);
+    background-color: var(--color-fondo);
+}
+
+header,
+main {
+    max-width: var(--ancho-maximo);
+    margin-inline: auto;
+}
+
+header {
+    margin-bottom: 1.5rem;
+}
+
+h1 {
+    margin: 0 0 0.25rem;
+    font-size: clamp(1.6rem, 2.5vw, 1.9rem);
+}
+
+.subtitulo {
+    margin: 0;
+    color: var(--color-texto-suave);
+}
+
+/* Tarjetas de métricas principales */
+
+.tarjetas {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 1rem;
+    margin-bottom: 2rem;
+}
+
+.tarjeta {
+    padding: var(--espaciado);
+    background-color: var(--color-superficie);
+    border: 1px solid var(--color-borde);
+    border-radius: var(--radio);
+    box-shadow: var(--sombra);
+}
+
+.tarjeta h2 {
+    margin: 0 0 0.5rem;
+    font-size: 0.85rem;
+    font-weight: 600;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    color: var(--color-texto-suave);
+}
+
+.valor {
+    margin: 0;
+    font-size: clamp(1.4rem, 2.2vw, 1.8rem);
+    font-weight: 700;
+    color: var(--color-primario);
+}
+
+.unidad {
+    font-size: 0.95rem;
+    font-weight: 500;
+    color: var(--color-texto-suave);
+}
+
+/* Tabla de emisiones por planta */
+
+section {
+    padding: var(--espaciado);
+    background-color: var(--color-superficie);
+    border: 1px solid var(--color-borde);
+    border-radius: var(--radio);
+}
+
+section h2 {
+    margin-top: 0;
+}
+
+.tabla-contenedor {
+    overflow-x: auto;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+caption {
+    margin-bottom: 0.5rem;
+    text-align: left;
+    color: var(--color-texto-suave);
+}
+
+th,
+td {
+    padding: 0.65rem 0.5rem;
+    border-bottom: 1px solid var(--color-borde);
+    text-align: left;
+}
+
+th {
+    background-color: var(--color-primario-suave);
+    font-weight: 600;
+}
+
+td.numerico,
+th.numerico {
+    text-align: right;
+    font-variant-numeric: tabular-nums;
+}
+
+tbody tr:last-child td {
+    border-bottom: none;
+}
+
+.sin-datos {
+    margin: 0;
+    padding: 1rem;
+    border-radius: 0.5rem;
+    background-color: var(--color-primario-suave);
+}
+
+@media (max-width: 480px) {
+    body {
+        padding: 1.25rem 0.75rem;
+    }
+
+    th,
+    td {
+        padding: 0.5rem 0.35rem;
+    }
+}

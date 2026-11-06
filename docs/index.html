@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Panel de sustentabilidad con las emisiones de carbono por planta industrial.">
+    <title>Panel de Sustentabilidad | EcoTech Solutions</title>
+    <link rel="stylesheet" href="static/sustentabilidad/panel.css">
+</head>
+<body>
+    <header>
+        <h1>Panel de Sustentabilidad</h1>
+        <p class="subtitulo">Auditoría de emisiones de carbono por planta industrial</p>
+    </header>
+
+    <main>
+        <div class="tarjetas">
+            <article class="tarjeta">
+                <h2>Total global de emisiones</h2>
+                <p class="valor">
+                    2200.00
+                    <span class="unidad">kg CO₂</span>
+                </p>
+            </article>
+
+            <article class="tarjeta">
+                <h2>Planta con mayor consumo</h2>
+                <p class="valor">Planta Sur</p>
+            </article>
+
+            <article class="tarjeta">
+                <h2>Consumo de la planta líder</h2>
+                <p class="valor">
+                    2500.00
+                    <span class="unidad">kWh</span>
+                </p>
+            </article>
+        </div>
+
+        <section aria-labelledby="titulo-emisiones">
+            <h2 id="titulo-emisiones">Emisiones por planta</h2>
+
+            <div class="tabla-contenedor">
+                <table>
+                    <caption>Emisiones acumuladas por planta industrial</caption>
+                    <thead>
+                        <tr>
+                            <th scope="col">Planta</th>
+                            <th scope="col" class="numerico">Emisiones (kg CO₂)</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Planta Norte</td>
+                            <td class="numerico">800.00</td>
+                        </tr>
+                        <tr>
+                            <td>Planta Sur</td>
+                            <td class="numerico">1000.00</td>
+                        </tr>
+                        <tr>
+                            <td>Planta Este</td>
+                            <td class="numerico">400.00</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+    </main>
+</body>
+</html>
